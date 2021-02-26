@@ -5,8 +5,8 @@
     </h1>
     <div>
       <p>
-        Due to the pandemic, physical and in-person correspondance will be postponed.
-        Electronic correspondance will still be taking place as usual.
+        Due to the pandemic, physical and in-person correspondence will be postponed.
+        Electronic correspondence will still be taking place as usual.
       </p>
       <p>
         Thank you for your patience and understanding!

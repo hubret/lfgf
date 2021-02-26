@@ -264,6 +264,9 @@
     <ul>
       <li>By email: admin@lfgf.ca</li>
     </ul>
+    <p>
+      ...this is probably satire.
+    </p>
   </main>
 </template>
 

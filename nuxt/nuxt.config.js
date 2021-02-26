@@ -11,6 +11,7 @@ export default {
       { hid: 'description', name: 'description', content: "Looking For Girlfriend aims to solve yesterday's problems using the technology we have today." }
     ],
     link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans&family=Anonymous+Pro:wght@700&family=Red+Hat+Display:ital,wght@0,400;1,400&display=swap' }
     ]
   },

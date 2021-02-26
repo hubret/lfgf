@@ -12,6 +12,7 @@
       <div class="menu">
         <nuxt-link :to="{path:'/',hash:'form'}">Contact</nuxt-link>
         <nuxt-link :to="{name: 'about'}">About</nuxt-link>
+        <nuxt-link :to="{name: 'covid'}">COVID-19</nuxt-link>
         <nuxt-link :to="{name: 'policy'}">Policy</nuxt-link>
         <div class="links">
           <a target="blank">

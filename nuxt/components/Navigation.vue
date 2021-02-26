@@ -1,5 +1,5 @@
 <template>
-  <nav :class={scrolled}>
+  <nav :class="{scrolled: (scrolled || nomove)}">
     <div class="inner wrapperbig">
       <nuxt-link to="/">
         <img src="~/assets/images/logowhite.svg">
@@ -15,6 +15,7 @@
 
 <script>
   export default {
+    props: ['nomove'],
     data:()=>({
       scrolled: false,
     }),

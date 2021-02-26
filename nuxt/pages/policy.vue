@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="wrapper">
     <h1>Privacy Policy</h1>
     <p>Last updated: February 26, 2021</p>
     <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your
@@ -266,6 +266,12 @@
     </ul>
   </main>
 </template>
+
+<script>
+export default {
+  layout: 'nomove'
+}
+</script>
 
 <style lang="scss" scoped>
   main{

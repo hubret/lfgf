@@ -4,11 +4,11 @@
       <nuxt-link to="/">
         <img src="~/assets/images/logowhite.svg">
       </nuxt-link>
-      <!-- <div class="menu">
+      <div class="menu">
         <nuxt-link to="/">Home</nuxt-link>
         <nuxt-link :to="{path:'/',hash:'form'}">Contact</nuxt-link>
         <nuxt-link :to="{name: 'about'}">About</nuxt-link>
-      </div> -->
+      </div>
     </div>
   </nav>
 </template>
@@ -62,8 +62,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      .menu a{
-        margin-left: 24px;
+      .menu{
+        @media (max-width: 600px){
+          display: none;
+        }
+        a{
+          margin-left: 24px;
+        }
       }
     }
     img{

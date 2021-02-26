@@ -1,0 +1,60 @@
+body{
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans";
+}
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4{
+  font-family: "Red Hat Display";
+  font-weight: 800;
+}
+
+h1, .h1{
+  font-size: 64px;
+  @media (max-width: 950px){
+    font-size: 36px;
+  }
+}
+
+.button{
+  display: inline-block;
+  background-color: black;
+  color: yellow;
+  padding: 24px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: "Red Hat Display";
+  font-weight: 800;
+  font-size: 24px;
+  margin: 24px 0;
+  transition: 0.25s all ease-in-out;
+  &:hover{
+    background: yellow;
+    color: black;
+  }
+}
+
+.wrapper{
+  margin: auto;
+  max-width: 1050px;
+  padding-left: 50px;
+  padding-right: 50px;
+  @media (max-width: 500px){
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.wrapperbig{
+  margin: auto;
+  max-width: 1200px;
+  padding-left: 64px;
+  padding-right: 64px;
+  @media (max-width: 500px){
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

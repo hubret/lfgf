@@ -20,15 +20,20 @@
           <div class="h1">
             Think you are girlfriend material? You'll get your time in the limelight.
           </div>
-          You will be contacted within 3 business days once your application is recieved!
         </div>
         <form>
           <label for="name">
             Your Name
+            <span class="error">
+              {{errors.name}}
+            </span>
           </label>
           <input id="name" name="name" type="text" v-model="form.name">
           <label for="contact">
             Contact Info (phone, email, IG handle, etc.)
+            <span class="error">
+              {{errors.contact}}
+            </span>
           </label>
           <input id="contact" name="contact" type="contact" v-model="form.contact">
           <label for="message">
@@ -36,7 +41,25 @@
             <span class="note">Optional</span>
           </label>
           <textarea id="message" rows="6" v-model="form.message"></textarea>
-          <input class="button" type="submit" value="Send" @click.prevent="send()">
+          <div class="group">
+            <input id="age" name="age" type="checkbox" v-model="form.age">
+            <label for="age">
+              I confirm I am at least 18 years old
+              <span class="error">
+                {{errors.age}}
+              </span>
+            </label>
+          </div>
+          <div class="group">
+            <input id="consent" name="consent" type="checkbox" v-model="form.consent">
+            <label for="consent">
+              I consent to being romantically pursued in the case that I might be The One
+              <span class="error">
+                {{errors.consent}}
+              </span>
+            </label>
+          </div>
+          <input class="button" type="submit" :value="!sent ? 'Send' : 'Sent ❤' " @click.prevent="validate(form)">
         </form>
       </div>
     </section>
@@ -51,16 +74,57 @@
       form:{
         name: '',
         contact: '',
-        message: ''
-      }
+        message: '',
+        age: '',
+        consent: '',
+      },
+      errors:{
+        name: '',
+        contact: '',
+        age: '',
+        consent: '',
+      },
+      sent: false
     }),
     async fetch(){
       // [this.page] = await this.$content('index').fetch()
     },
     methods:{
-      send(){
-        console.log(this.$config)
-        submit.send(form)
+      validate(payload){
+
+        this.errors = {
+          name: '',
+          contact: '',
+          age: '',
+          consent: '',
+        }
+
+        if(!payload.name){
+          this.errors.name = "Please enter your name"
+        }
+        if(!payload.contact){
+          this.errors.contact = "Please provide a method of contact"
+        }
+        if(!payload.age){
+          this.errors.age = "Please confirm age of majority"
+        }
+        if(!payload.consent){
+          this.errors.consent = "Please state your consent"
+        }
+
+        if(!this.errors.name && !this.errors.contact && !this.errors.age && !this.errors.consent){
+          this.send(payload)
+        }
+
+      },
+      send(payload){
+        submit.send(payload)
+        this.sent = true
+        this.form = {
+          name: '',
+          contact: '',
+          message: ''
+        }
       }
     }
   }
@@ -73,7 +137,7 @@
   .huge{
     font-size: 96px;
     @media (max-width: 950px){
-      font-size: 64px;
+      font-size: 48px;
     }
     font-family: 'Anonymous Pro';
     font-variant-numeric: tabular-nums;
@@ -114,6 +178,9 @@
       @media (max-width: 950px){
         padding: 96px 0;
       }
+      @media (max-width: 600px){
+        padding: 48px 0;
+      }
       label{
         font-size: 24px;
         font-family: "Red Hat Display";
@@ -140,12 +207,27 @@
         font-size: 16px;
         color: #aaaaaa;
       }
+      .error{
+        font-size: 16px;
+        color: #ff7777;
+      }
       input[type=submit]{
         @extend .button;
 
         display: inline-block;
         height: auto;
         width: auto;
+      }
+      .group{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 16px;
+      }
+      input[type=checkbox]{
+        display: block;
+        width: 24px;
+        height: 24px;
+        margin: 4px 0 0 0;
       }
     }
   }

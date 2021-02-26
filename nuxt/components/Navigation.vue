@@ -4,11 +4,11 @@
       <nuxt-link to="/">
         <img src="~/assets/images/logowhite.svg">
       </nuxt-link>
-      <div class="menu">
+      <!-- <div class="menu">
         <nuxt-link to="/">Home</nuxt-link>
         <nuxt-link :to="{path:'/',hash:'form'}">Contact</nuxt-link>
         <nuxt-link :to="{name: 'about'}">About</nuxt-link>
-      </div>
+      </div> -->
     </div>
   </nav>
 </template>
@@ -47,13 +47,14 @@
   nav{
     font-family: "Red Hat Display";
     position: fixed;
-    height: 60px;
+    height: 100px;
     width: 100%;
     top: 0;
     z-index: 90;
     background: rgba(0,0,0,0);
     transition: 0.5s all ease-in-out;
     &.scrolled{
+      height: 60px;
       background: rgba(0,0,0,1);
     }
     .inner{

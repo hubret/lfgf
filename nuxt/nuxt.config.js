@@ -1,17 +1,16 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'lfgf',
+    title: 'Looking For Girlfriend',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: "Looking For Girlfriend aims to solve yesterday's problems using the technology we have today." }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans&family=Anonymous+Pro:wght@700&family=Red+Hat+Display:ital,wght@0,400;1,400&display=swap' }
     ]
   },
